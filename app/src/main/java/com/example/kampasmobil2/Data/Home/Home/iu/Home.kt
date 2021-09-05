@@ -28,7 +28,6 @@ class DataSourceHome {
         val datoss = FirebaseFirestore.getInstance().collection("coleccion/{${id}/ofertas").get().await()
         for (clientes in datoss.documents) {
             clientes.toObject(DataSource::class.java)?.let {
-
                 listClientes.add(it)
             }
         }
