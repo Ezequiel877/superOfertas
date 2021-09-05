@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegation_iu"
+    app:startDestination="@id/blankLogin">
+
+    <fragment
+        android:id="@+id/blank1"
+        android:name="com.example.kampasmobil2.UI.Home.Blank1"
+        android:label="Blank1" >
+        <action
+            android:id="@+id/action_blank1_to_blank2"
+            app:destination="@id/blank2" />
+        <action
+            android:id="@+id/action_blank1_to_blank3"
+            app:destination="@id/blank3" />
+        <action
+            android:id="@+id/action_blank1_to_blank4"
+            app:destination="@id/blank4" />
+    </fragment>
+    <fragment
+        android:id="@+id/blank2"
+        android:name="com.example.kampasmobil2.UI.Home.Blank2"
+        android:label="Blank2" />
+    <fragment
+        android:id="@+id/blank3"
+        android:name="com.example.kampasmobil2.UI.Home.Blank3"
+        android:label="Blank3" />
+    <fragment
+        android:id="@+id/blank4"
+        android:name="com.example.kampasmobil2.UI.Home.Blank4"
+        android:label="Blank4" >
+        <argument
+            android:name="imagen"
+            app:argType="string" />
+        <argument
+            android:name="precios"
+            app:argType="string" />
+        <argument
+            android:name="ImagenD"
+            app:argType="string" />
+        <argument android:name="Cofertas"
+            app:argType="string" />
+        <argument
+            android:name="detalles"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="ubicacion"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankLogin"
+        android:name="com.example.kampasmobil2.UI.LoginSetup.BlankLogin"
+        android:label="fragment_blank_login"
+        tools:layout="@layout/fragment_blank_login" >
+        <action
+            android:id="@+id/action_blankLogin_to_blankRegister"
+            app:destination="@id/blankRegister" />
+        <action
+            android:id="@+id/action_blankLogin_to_blank1"
+            app:destination="@id/blank1" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankRegister"
+        android:name="com.example.kampasmobil2.UI.LoginSetup.BlankRegister"
+        android:label="fragment_blank_register"
+        tools:layout="@layout/fragment_blank_register" >
+        <action
+            android:id="@+id/action_blankRegister_to_blank1"
+            app:destination="@id/blank1" />
+    </fragment>
+</navigation>

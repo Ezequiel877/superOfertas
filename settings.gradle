@@ -1,0 +1,2 @@
+rootProject.name = "KampasMobil2"
+include ':app'

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "134246572873",
+    "project_id": "kampasmobilcash",
+    "storage_bucket": "kampasmobilcash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134246572873:android:bc23f7ed44a4d91acfb098",
+        "android_client_info": {
+          "package_name": "com.example.kampasmobil2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134246572873-v6g0cqpaqpb2mjg6r9f179oe3i83rsst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXojOPM1v7xnZGEO5XTc_lvRd-2kBrcNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134246572873-v6g0cqpaqpb2mjg6r9f179oe3i83rsst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

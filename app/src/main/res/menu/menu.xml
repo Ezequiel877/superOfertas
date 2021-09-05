@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="nav_view">
+    <item
+        android:id="@+id/blank1"
+        android:title="supermercados" />
+
+    <item
+        android:id="@+id/blank2"
+        android:title="super ofertas" />
+    <item
+        android:id="@+id/blank3"
+        android:title="carnicerias" />
+
+
+</menu>
