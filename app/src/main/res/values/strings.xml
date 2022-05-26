@@ -5,5 +5,14 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="token">subscribed</string>
-
+    <string name="hola_nombre_id">hola nombre</string>
+    <string name="textCantidad">%1$d</string>
+    <string name="_CARRITP">TotalSuMA</string>
+    <string name="prcio_PRODUCTO">PRCIO</string>
+    <string name="realiozar_pedido_btn">Realizar pedido</string>
+    <string name="a_adir_carrito_add_tocard">Añadir Carrito</string>
+    <string name="disponibles_cantidad">Disponibles</string>
+    <string name="total_detalle_precio">Total: $%1$.2f usd(%2$d x $%3$.2f )</string>
+    <string name="API_KEY_GOOGLE">AIzaSyAhgm2iEmMLOXFCjbIDJePH3B9GH-ZUdVQ</string>
+    <string name="default_notification_channel_id">fcm_default_channel</string>
 </resources>

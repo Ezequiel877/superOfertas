@@ -5,5 +5,4 @@ import com.google.firebase.auth.FirebaseUser
 interface usuariosInte {
     suspend fun singUp(email:String, password:String): FirebaseUser?
 
-
 }

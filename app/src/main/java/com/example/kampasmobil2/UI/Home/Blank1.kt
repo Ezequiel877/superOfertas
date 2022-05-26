@@ -3,6 +3,7 @@ package com.example.kampasmobil2.UI.Home
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -21,8 +22,8 @@ import com.example.kampasmobil2.model.viewModelPost
 import com.google.android.gms.ads.AdRequest
 
 class Blank1 : Fragment(R.layout.fragment_blank1), adapter1Postprivate.OnModelClick {
-    private lateinit var binding: FragmentBlank1Binding
 
+    private lateinit var binding: FragmentBlank1Binding
     private val viewModel: viewModelPost by activityViewModels<viewModelPost> {
         HomeScreemFactory(
             HomeImp(
@@ -33,8 +34,8 @@ class Blank1 : Fragment(R.layout.fragment_blank1), adapter1Postprivate.OnModelCl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentBlank1Binding.bind(view)
 
+        binding = FragmentBlank1Binding.bind(view)
         viewModel.getLeterOfert().observe(viewLifecycleOwner, Observer {
             when (it) {
                 is Result.Loading -> {
@@ -46,7 +47,6 @@ class Blank1 : Fragment(R.layout.fragment_blank1), adapter1Postprivate.OnModelCl
                     binding.deltaRelative.hide()
                     binding.recicler.adapter = adapter1Postprivate(it.data, this)
                     adRequest()
-
                 }
                 is Result.Failure -> {
                     binding.deltaRelative.hide()
@@ -74,11 +74,12 @@ class Blank1 : Fragment(R.layout.fragment_blank1), adapter1Postprivate.OnModelCl
             model.ImagenD,
             model.Cofertas,
             model.detalles,
-            model.id,
-            model.precios,
+            model.nombre,
+            model.precios.toString(),
             model.ubicacion,
         )
         findNavController().navigate(action)
     }
+
 }
 

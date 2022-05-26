@@ -9,8 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.example.kampasmobil2.Core.Result
-import com.example.kampasmobil2.Core.adapterCustoms.adapter1Postprivate
-import com.example.kampasmobil2.Core.adapterCustoms.favoritosAdapter
 import com.example.kampasmobil2.Core.visivility.hide
 import com.example.kampasmobil2.Core.visivility.show
 import com.example.kampasmobil2.Data.Home.DataSourceHome
@@ -44,7 +42,7 @@ class Blank3 : Fragment(R.layout.fragment_blank3) {
                 }
                 is Result.Succes -> {
                     binding.deltaRelative.hide()
-                    binding.recicler.adapter = favoritosAdapter(it.data)
+
 
                 }
                 is Result.Failure -> {

@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:theme="@style/Theme.MaterialComponents.Light"
     tools:context=".UI.LoginSetup.BlankLogin">
 
     <com.google.android.material.textfield.TextInputLayout

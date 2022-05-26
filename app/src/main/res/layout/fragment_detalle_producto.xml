@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/ImagenProducto"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="12dp"
+        android:src="@color/colorcard"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/common_padding_defoult"
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:gravity="center"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImagenProducto"
+        tools:text="comeercio" />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extendedFloatingActionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_padding_defoult"
+        android:text="@string/a_adir_carrito_add_tocard"
+        android:theme="@style/AppTheme"
+        android:textAlignment="center"
+        app:icon="@drawable/add_shopping_cart_24"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/textViewId"
+        app:layout_constraintStart_toStartOf="@id/textViewId" />
+
+    <ImageButton
+        android:id="@+id/imagenBtnRResta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_menos"
+        app:layout_constraintStart_toStartOf="@id/textViewId"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/extendedFloatingActionButton"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cantidadInput"
+        app:layout_constraintStart_toEndOf="@id/imagenBtnRResta"
+        app:layout_constraintTop_toTopOf="@id/imagenBtnRResta"
+        app:layout_constraintBottom_toBottomOf="@id/imagenBtnRResta"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textInputNewCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:ems="4"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:textAlignment="center"
+            tools:text="0" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/imagenBtnSuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/producto_add_circle_"
+        app:layout_constraintStart_toEndOf="@id/cantidadInput"
+        android:layout_marginStart="@dimen/common_padding_min"
+        app:layout_constraintTop_toTopOf="@id/imagenBtnRResta"
+        app:layout_constraintBottom_toBottomOf="@id/imagenBtnRResta" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/ttPrecioProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/disponibles_cantidad"
+        app:layout_constraintStart_toStartOf="@+id/textViewId"
+        app:layout_constraintEnd_toEndOf="@id/textViewId"
+        app:layout_constraintBottom_toTopOf="@id/imagenBtnSuma"
+        android:layout_marginBottom="@dimen/common_padding_defoult"/>
+
+
+    <TextView
+        android:id="@+id/ttPrecio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/imagenBtnSuma"
+        app:layout_constraintEnd_toEndOf="@id/textViewId"
+        app:layout_constraintTop_toTopOf="@id/imagenBtnSuma"
+        android:inputType="number"
+        android:layout_marginStart="@dimen/common_padding_defoult"
+        app:layout_constraintBottom_toBottomOf="@id/imagenBtnRResta" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/common_padding_defoult"
+        app:layout_constraintBottom_toTopOf="@id/ttPrecioProduct"
+        app:layout_constraintEnd_toEndOf="@id/textViewId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/textViewId"
+        app:layout_constraintTop_toBottomOf="@id/textViewId"
+        app:layout_constraintVertical_bias="0.451">
+
+        <TextView
+            android:id="@+id/iddescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="decripcion del pruducto" />
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Blank1">
+    tools:context=".UI.Home.Blank1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/bannerx"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,12 +33,6 @@
         android:paddingTop="70dp"
         tools:ignore="MissingConstraints">
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/bannerx"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
         <RelativeLayout
             android:id="@+id/deltaRelative"
@@ -42,7 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_margin="10dp"
             android:paddingTop="20dp"
+            
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </LinearLayout>
 

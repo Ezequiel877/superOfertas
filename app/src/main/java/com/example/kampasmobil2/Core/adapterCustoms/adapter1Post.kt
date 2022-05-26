@@ -6,18 +6,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.kampasmobil2.Core.BaseViewHolder
 import com.example.kampasmobil2.Core.BaseViewHolder2
 import com.example.kampasmobil2.DataSource.DataSource
-import com.example.kampasmobil2.DataSource.producto
 import com.example.kampasmobil2.UI.Home.Blank1
 import com.example.kampasmobil2.databinding.ImagendetalleBinding
 
 class adapter1Postprivate(private val listaClientes: List<DataSource>, val itemCLick: Blank1) :
     RecyclerView.Adapter<BaseViewHolder2<*>>() {
 
+
     interface OnModelClick {
-        fun onmodelClick(model: DataSource,)
+        fun onmodelClick(model: DataSource)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder2<*> {
@@ -48,16 +48,13 @@ class adapter1Postprivate(private val listaClientes: List<DataSource>, val itemC
     inner class HomeScreemHolde(val itemPost: ImagendetalleBinding, val context: Context) :
         BaseViewHolder2<DataSource>(itemPost.root) {
         override fun binda(item: DataSource) {
-            Glide.with(context).load(item.imagen).centerCrop().into(itemPost.imagen)
-            Glide.with(context).load(item.ImagenD).centerCrop().into(itemPost.imagen2)
-            itemPost.texName.text = item.id
-            itemPost.tex2.text = item.precios
+
+            Glide.with(context).load(item.imagen).centerCrop().into(itemPost.imagenconfirme)
+            itemPost.texName.text = item.nombre
+            itemPost.tex2.text = item.precios.toString()
             itemPost.textView.text = item.Cofertas
             itemPost.textView3.text = item.ubicacion
 
         }
-
-
     }
-
 }

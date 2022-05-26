@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:theme="@style/Theme.MaterialComponents.Light"
     tools:context=".UI.LoginSetup.BlankRegister">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -18,7 +18,7 @@
             android:id="@+id/InPutText_Username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="nombre"
+            android:hint="Nombre"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -32,7 +32,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InPutText_email"
             android:layout_width="match_parent"
-            android:hint="email o numero-celular"
+            android:hint="Email o numero-celular"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -49,7 +49,7 @@
             android:id="@+id/Passwork"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="contraseña"
+            android:hint="Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,7 +73,8 @@
         android:id="@+id/buttonOn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:text="Continuar"/>
     <ProgressBar
         android:id="@+id/progresLigt"
         android:layout_width="wrap_content"

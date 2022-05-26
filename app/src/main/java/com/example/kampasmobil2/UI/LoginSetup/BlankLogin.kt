@@ -47,7 +47,8 @@ class BlankLogin : Fragment(R.layout.fragment_blank_login) {
     }
     private fun goingLoging(){
         binding.singUp.setOnClickListener {
-            findNavController().navigate(R.id.action_blankLogin_to_blankRegister)
+            val navegacion=BlankLoginDirections.actionBlankLoginToBlankRegister("","","")
+            findNavController().navigate(navegacion)
 
         }
     }

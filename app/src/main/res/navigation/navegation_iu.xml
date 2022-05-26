@@ -51,6 +51,12 @@
         <argument
             android:name="ubicacion"
             app:argType="string" />
+        <action
+            android:id="@+id/action_blank4_to_fragmentDetalleProducto"
+            app:destination="@id/fragmentDetalleProducto" />
+        <action
+            android:id="@+id/action_blank4_to_cardFragmentDialog"
+            app:destination="@id/cardFragmentDialog" />
     </fragment>
     <fragment
         android:id="@+id/blankLogin"
@@ -69,8 +75,125 @@
         android:name="com.example.kampasmobil2.UI.LoginSetup.BlankRegister"
         android:label="fragment_blank_register"
         tools:layout="@layout/fragment_blank_register" >
+        <argument
+            android:name="ciudad"
+            app:argType="string" />
+        <argument
+            android:name="ubicacion"
+            app:argType="string" />
+        <argument
+            android:name="direccion"
+            app:argType="string" />
         <action
-            android:id="@+id/action_blankRegister_to_blank1"
+            android:id="@+id/action_blankRegister_to_fragmentDireccion2"
+            app:destination="@id/fragmentDireccion" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetalleProducto"
+        android:name="com.example.kampasmobil2.UI.Home.FragmentDetalleProducto"
+        android:label="FragmentDetalleProducto" >
+        <action
+            android:id="@+id/action_fragmentDetalleProducto_to_blank4"
+            app:destination="@id/blank4" />
+        <argument
+            android:name="precios"
+            app:argType="string" />
+        <argument
+            android:name="ImagenD"
+            app:argType="string" />
+        <argument
+            android:name="imagen"
+            app:argType="string" />
+        <argument
+            android:name="Cofertas"
+            app:argType="string" />
+        <argument
+            android:name="detalles"
+            app:argType="string" />
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Carrrito"
+        android:name="com.example.kampasmobil2.UI.Home.Fragment_Carrrito"
+        android:label="fragment__carrrito"
+        tools:layout="@layout/fragment__carrrito" >
+        <action
+            android:id="@+id/action_fragment_Carrrito_to_fragmentPagos"
+            app:destination="@id/fragmentPagos" />
+        <argument
+            android:name="direccion"
+            app:argType="string" />
+        <argument
+            android:name="ubicacion"
+            app:argType="string" />
+        <argument
+            android:name="idcommers"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDelicery"
+        android:name="com.example.kampasmobil2.UI.Carrrito.Orden.FragmentDelicery"
+        android:label="fragment_delicery"
+        tools:layout="@layout/fragment_delivery" >
+        <action
+            android:id="@+id/action_fragmentDelicery_to_fragmentDireccion"
+            app:destination="@id/fragmentDireccion" />
+        <action
+            android:id="@+id/action_fragmentDelicery_to_fragment_Carrrito"
+            app:destination="@id/fragment_Carrrito" />
+        <argument
+            android:name="idcommers"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDireccion"
+        android:name="com.example.kampasmobil2.UI.Home.FragmentDireccion"
+        android:label="fragment_direccion"
+        tools:layout="@layout/fragment_direccion" >
+        <action
+            android:id="@+id/action_fragmentDireccion_to_mapCliente"
+            app:destination="@id/mapCliente" />
+        <argument
+            android:name="direccion"
+            app:argType="string" />
+        <argument
+            android:name="ubicacion"
+            app:argType="string" />
+        <argument
+            android:name="ciudad"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentDireccion_to_blank1"
             app:destination="@id/blank1" />
     </fragment>
+    <fragment
+        android:id="@+id/mapCliente"
+        android:name="com.example.kampasmobil2.UI.Carrrito.Orden.MapCliente"
+        android:label="fragment_map_cliente"
+        tools:layout="@layout/fragment_map_cliente" >
+        <action
+            android:id="@+id/action_mapCliente_to_fragmentDireccion"
+            app:destination="@id/fragmentDireccion" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPagos"
+        android:name="com.example.kampasmobil2.UI.Carrrito.FragmentPagos"
+        android:label="fragment_pagos"
+        tools:layout="@layout/fragment_pagos" />
+    <dialog
+        android:id="@+id/cardFragmentDialog"
+        android:name="com.example.kampasmobil2.Card.CardFragmentDialog"
+        android:label="CardFragmentDialog" >
+        <action
+            android:id="@+id/action_cardFragmentDialog_to_fragment_Carrrito"
+            app:destination="@id/fragment_Carrrito" />
+        <argument
+            android:name="idComers"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cardFragmentDialog_to_fragmentDelicery3"
+            app:destination="@id/fragmentDelicery" />
+    </dialog>
 </navigation>

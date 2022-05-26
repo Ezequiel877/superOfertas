@@ -10,10 +10,18 @@ import com.example.kampasmobil2.Data.Home.Home.iu.usuario.usuariosInte
 import kotlinx.coroutines.Dispatchers
 
 class modelRegistro(private val loginRepo:usuarioRegister ):ViewModel() {
-    fun singip(email: String, password: String, cliente:String)= liveData(Dispatchers.IO){
+    fun singip(email: String, password: String, cliente:String, )= liveData(Dispatchers.IO){
         emit(Result.Loading())
         try {
             emit(Result.Succes(loginRepo.singUp(email, password, cliente)))
+        }catch (e:Exception){
+            emit(Result.Failure(e))
+        }
+    }
+    fun getDireccion(direccion:String, ubicacion:String, cliente:String)= liveData(Dispatchers.IO){
+        emit(Result.Loading())
+        try {
+            emit(Result.Succes(loginRepo.direccion( direccion,ubicacion, cliente)))
         }catch (e:Exception){
             emit(Result.Failure(e))
         }

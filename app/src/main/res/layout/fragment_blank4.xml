@@ -2,28 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_conteirner"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
-        android:id="@+id/detalle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <ProgressBar
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-
-
-    </RelativeLayout>
-
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,9 +17,9 @@
         <ImageView
             android:id="@+id/back_list"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:fitsSystemWindows="true"
+            android:layout_height="200dp"
             android:contentDescription="TODO"
+            android:fitsSystemWindows="true"
             tools:ignore="ContentDescription,HardcodedText" />
 
         <View
@@ -58,12 +44,12 @@
             android:id="@+id/Imagencrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="TODO"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher_round"
-            android:contentDescription="TODO" />
+            android:src="@mipmap/ic_launcher_round" />
 
     </androidx.cardview.widget.CardView>
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -72,6 +58,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="333dp" />
+
     <TextView
         android:id="@+id/textViewId"
         android:layout_width="match_parent"
@@ -88,20 +75,19 @@
         tools:ignore="MissingConstraints" />
 
 
-
     <TextView
         android:id="@+id/favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:drawablePadding="8dp"
         android:gravity="center"
-        android:layout_margin="12dp"
         android:text="activa las notificaciones"
         android:textColor="@color/white"
         app:drawableTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintStart_toEndOf="@id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardView"
 
         tools:ignore="MissingConstraints" />
 
@@ -136,10 +122,10 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,9 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
             android:paddingTop="12dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/ic_baseline_share_24"
             android:text="COMPARTIR" />
 
         <ImageButton
@@ -174,8 +159,8 @@
             android:id="@+id/botonMG"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_margin="12dp"
+            android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:paddingTop="12dp"
             android:src="@mipmap/ic_launcher_round"
@@ -185,18 +170,22 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearrecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         tools:ignore="MissingConstraints">
-  <RelativeLayout
+
+
+        <RelativeLayout
             android:id="@+id/deltarelative"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:visibility="gone">
 
             <ProgressBar
@@ -211,13 +200,39 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/detallesO"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:orientation="vertical"
-            android:paddingTop="20dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tevcarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Carrito vacio"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnVerCarrito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearrecycler"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/btnVerCarrito"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginEnd="@dimen/common_padding_defoult"
+        android:text="Ver carrito"
+        android:theme="@style/AppTheme"
+        app:layout_constraintEnd_toEndOf="@id/linearrecycler"
+        app:layout_constraintTop_toBottomOf="@id/linearrecycler" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

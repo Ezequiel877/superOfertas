@@ -1,10 +1,21 @@
 package com.example.kampasmobil2.Core.firabese
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.media.RingtoneManager
+import android.os.Build
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import androidx.core.content.edit
 import com.example.kampasmobil2.Core.constantes.constantes
 import com.google.firebase.messaging.FirebaseMessagingService
 import androidx.preference.PreferenceManager
+import com.example.kampasmobil2.MainActivity
+import com.example.kampasmobil2.R
+import com.google.firebase.messaging.RemoteMessage
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
     override fun onNewToken(newToken: String) {
@@ -18,7 +29,33 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
                 .apply()
         }
 
-        Log.i("new token", newToken)
+        Log.d("new token", newToken)
 
+    }
+    override fun onMessageReceived(p0: RemoteMessage) {
+        super.onMessageReceived(p0)
+        p0.notification?.let {
+            sendNotification(it)
+        }
+    }
+    private fun sendNotification(remoteMessage: RemoteMessage.Notification){
+        val intent= Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        val pedingIntent= PendingIntent.getActivity(this, 0 , intent, PendingIntent.FLAG_ONE_SHOT)
+        val chanelid=getString(R.string.default_notification_channel_id)
+        val defulRington= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        val notificationBuilder= NotificationCompat.Builder(this,chanelid)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle(remoteMessage.title)
+            .setContentText(remoteMessage.body)
+            .setAutoCancel(true)
+            .setSound(defulRington)
+            .setContentIntent(pedingIntent)
+        val notificationManager=getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val channel= NotificationChannel(chanelid, "Generales", NotificationManager.IMPORTANCE_DEFAULT)
+            notificationManager.createNotificationChannel(channel)
+        }
+        notificationManager.notify(0, notificationBuilder.build())
     }
 }
