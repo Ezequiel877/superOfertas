@@ -6,36 +6,20 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kampasmobil2.Card.CardFragmentDialogArgs
-import com.example.kampasmobil2.Card.CardFragmentDialogDirections
 import com.example.kampasmobil2.Core.Result
 import com.example.kampasmobil2.Core.adapterCustoms.Adapterdireccion
-import com.example.kampasmobil2.Core.adapterCustoms.ProductCartAdapter
-import com.example.kampasmobil2.Core.adapterCustoms.adapterDetalles
-import com.example.kampasmobil2.Core.toas
 import com.example.kampasmobil2.Data.Home.DataSourceHome
 import com.example.kampasmobil2.Data.Home.Home.iu.OnCartListener
-import com.example.kampasmobil2.Data.Home.Home.iu.usuario.usuarioDtaSource
-import com.example.kampasmobil2.DataSource.DataSource
-import com.example.kampasmobil2.DataSource.Producto
-import com.example.kampasmobil2.DataSource.clientesIn
+import com.example.kampasmobil2.DataSource.Orden
 import com.example.kampasmobil2.DataSource.direccion
 import com.example.kampasmobil2.R
 import com.example.kampasmobil2.UI.Home.Implement.HomeImp
-import com.example.kampasmobil2.UI.LoginSetup.Firebase.RigisteImp
 import com.example.kampasmobil2.databinding.FragmentDeliveryBinding
 import com.example.kampasmobil2.model.HomeScreemFactory
-import com.example.kampasmobil2.model.UthRegistro
-import com.example.kampasmobil2.model.modelRegistro
 import com.example.kampasmobil2.model.viewModelPost
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.tasks.await
 
 class FragmentDelicery : Fragment(R.layout.fragment_delivery), OnCartListener {
 
@@ -84,7 +68,7 @@ class FragmentDelicery : Fragment(R.layout.fragment_delivery), OnCartListener {
         }
     }
 
-    override fun setQuanty(produc: DataSource) {
+    override fun setQuanty(produc: Orden) {
         TODO("Not yet implemented")
     }
 

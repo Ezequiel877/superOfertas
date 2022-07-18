@@ -4,21 +4,18 @@ import android.util.Log
 import com.example.kampasmobil2.Core.Result
 import com.example.kampasmobil2.Data.Home.DataSourceHome
 import com.example.kampasmobil2.Data.Home.Home.iu.HomeInt
-import com.example.kampasmobil2.DataSource.DataSource
-import com.example.kampasmobil2.DataSource.Producto
-import com.example.kampasmobil2.DataSource.clientesIn
-import com.example.kampasmobil2.DataSource.direccion
+import com.example.kampasmobil2.DataSource.*
 
 class HomeImp(private val data: DataSourceHome) :
     HomeInt {
-    override suspend fun getClientes(): Result<List<DataSource>> =data.getClientes()
+    override suspend fun getClientes(): Result<List<Comercios>> =data.getClientes()
 
 
-    override suspend fun favoritos(): Result<List<DataSource>> {
+    override suspend fun favoritos(): Result<List<Orden>> {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getOfertas(id: String): Result<List<DataSource>> {
+    override suspend fun getOfertas(id: String): Result<List<Orden>> {
         Log.d("TAGFIREBASE", "getOfertas: $id")
         return data.getOferts(id)
     }

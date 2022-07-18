@@ -2,7 +2,7 @@ package com.example.kampasmobil2.Core
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.example.kampasmobil2.DataSource.DataSource
+import com.example.kampasmobil2.DataSource.Orden
 
 fun ImageView.Load(
     url: String,
@@ -12,6 +12,6 @@ fun ImageView.Load(
 
 
 }
-fun ToObjetc():DataSource{
-        return  DataSource()
+fun ToObjetc():Orden{
+        return  Orden()
 }

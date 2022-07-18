@@ -1,11 +1,5 @@
 package com.example.kampasmobil2.Data.Home.Home.iu.usuario
 
-import android.util.Log
-import com.example.kampasmobil2.Core.Result
-import com.example.kampasmobil2.Core.constantes.constantes
-import com.example.kampasmobil2.Data.Home.Home.iu.Favorite.prefenceDataSource
-import com.example.kampasmobil2.DataSource.DataSource
-import com.example.kampasmobil2.DataSource.Producto
 import com.example.kampasmobil2.DataSource.clientesIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

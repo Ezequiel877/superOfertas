@@ -7,25 +7,22 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kampasmobil2.Core.BaseViewHolder
-import com.example.kampasmobil2.DataSource.DataSource
-import com.example.kampasmobil2.DataSource.Producto
-import com.example.kampasmobil2.UI.Home.Blank1
+import com.example.kampasmobil2.DataSource.Orden
 import com.example.kampasmobil2.UI.Home.Blank4
-import com.example.kampasmobil2.UI.Home.FragmentDetalleProducto
 import com.example.kampasmobil2.databinding.ImagendetalleBinding
 
-class adapterDetalles(private val listaClientes: List<DataSource>, val itemCLick: Blank4) :
+class adapterDetalles(private val listaClientes: List<Orden>, val itemCLick: Blank4) :
     RecyclerView.Adapter<BaseViewHolder<*>>() {
 
 
     interface OnModelClick {
-        fun onmodelClick(model: DataSource)
+        fun onmodelClick(model: Orden)
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val itemBanding =
-            ImagendetalleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                ImagendetalleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val TAKE = HomeScreem(itemBanding, parent.context)
         itemBanding.root.setOnClickListener {
             val positon = TAKE.adapterPosition.takeIf {
@@ -49,12 +46,12 @@ class adapterDetalles(private val listaClientes: List<DataSource>, val itemCLick
     override fun getItemCount(): Int = listaClientes.size
 
     inner class HomeScreem(val itemPost: ImagendetalleBinding, val context: Context) :
-        BaseViewHolder<DataSource>(itemPost.root) {
-        override fun bind(item: DataSource) {
+        BaseViewHolder<Orden>(itemPost.root) {
+        override fun bind(item: Orden) {
             Glide.with(context).load(item.imagen).centerCrop().into(itemPost.imagenconfirme)
             itemPost.texName.text = item.nombre
-            itemPost.textView.text = item.detalles
-            itemPost.tex2.text = item.precios.toString()
+            itemPost.textView.text = item.descripcion
+            itemPost.tex2.text = item.precio
 
 
         }

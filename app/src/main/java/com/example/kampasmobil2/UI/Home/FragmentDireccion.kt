@@ -77,8 +77,7 @@ class FragmentDireccion : Fragment(R.layout.fragment_direccion) {
                 token?.let {
                     val firebase = FirebaseFirestore.getInstance()
                     val tokenmap = hashMapOf(Pair(constantes.TOKEN_ID, token))
-                    val db = firebase.collection("user").document(usertoken)
-                    db.collection("token").add(tokenmap).addOnSuccessListener {
+                    val db = firebase.collection("user").document(usertoken).set(tokenmap).addOnSuccessListener {
                         Log.d("TAGTOKENSEGUARDO", "createToken: $token")
                         preference.edit {
                             putString(constantes.TOKEN_ID, null)
@@ -91,19 +90,13 @@ class FragmentDireccion : Fragment(R.layout.fragment_direccion) {
             }
         }
 
-        Log.d(TAG, "onViewCreated: ${args.direccion} ")
-        val firebase =
-            com.google.firebase.auth.FirebaseAuth.getInstance().uid
-
-
     }
 
     private fun gotoMAP() {
-        val nevegation = FragmentDireccionDirections.actionFragmentDireccionToMapCliente()
+        val nevegation =FragmentDireccionDirections.actionFragmentDireccionToMapsDisign()
         findNavController().navigate(nevegation)
 
     }
-
 
     private fun createUser(name: String, direccion: String, ubicacion: String) {
         viewModel.getDireccion(name, direccion, ubicacion)

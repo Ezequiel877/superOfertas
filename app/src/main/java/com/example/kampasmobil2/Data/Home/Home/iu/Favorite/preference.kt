@@ -1,8 +1,8 @@
 package com.example.kampasmobil2.Data.Home.Home.iu.Favorite
 
-import com.example.kampasmobil2.DataSource.DataSource
+import com.example.kampasmobil2.DataSource.Orden
 
 
 interface preference {
-    suspend fun setLike():DataSource?
+    suspend fun setLike():Orden?
 }

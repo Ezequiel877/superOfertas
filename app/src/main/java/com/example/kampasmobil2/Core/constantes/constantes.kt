@@ -10,7 +10,7 @@ object constantes {
     const val message="message"
     const val token="token"
     const val SEND_NOTIF="sendNotification"
-    const val APPWEB=""
+    const val APPWEB="https://marketitdev.000webhostapp.com/KampasMobil/NiloRS.php"
     const val Success=""
 
 

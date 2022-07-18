@@ -3,9 +3,7 @@ package com.example.kampasmobil2.Core.Utils
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
-import com.example.kampasmobil2.DataSource.DataSource
 import com.google.gson.Gson
-import java.lang.Error
 
 class SharePrf(contex:Context) {
 

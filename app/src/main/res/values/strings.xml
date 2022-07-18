@@ -14,5 +14,14 @@
     <string name="disponibles_cantidad">Disponibles</string>
     <string name="total_detalle_precio">Total: $%1$.2f usd(%2$d x $%3$.2f )</string>
     <string name="API_KEY_GOOGLE">AIzaSyAhgm2iEmMLOXFCjbIDJePH3B9GH-ZUdVQ</string>
-    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <string name="default_notification_channel_id">general</string>
+
+    <string name="orden_status">Estado: %1$s</string>
+
+    <string name="orden_track_">Desconocido</string>
+    <string name="status_pedido">Pedido</string>
+    <string name="status_preparando">Preparando</string>
+    <string name="status_enviado">Enviado</string>
+    <string name="status_entregado">Entregado</string>
+
 </resources>

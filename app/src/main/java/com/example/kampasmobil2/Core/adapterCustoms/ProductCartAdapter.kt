@@ -7,24 +7,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.kampasmobil2.Card.CardFragmentDialog
 import com.example.kampasmobil2.Core.Utils.SharePrf
 import com.example.kampasmobil2.Data.Home.Home.iu.OnCartListener
-import com.example.kampasmobil2.DataSource.DataSource
+import com.example.kampasmobil2.DataSource.Orden
 import com.example.kampasmobil2.DataSource.direccion
 import com.example.kampasmobil2.R
 import com.example.kampasmobil2.databinding.FragmentItemProductoBinding
 
 class ProductCartAdapter(
     private var context: Context,
-    private val producList: ArrayList<DataSource>, private var listener: OnCartListener) : RecyclerView.Adapter<ProductCartAdapter.ViewHolder>() {
+    private val producList: ArrayList<Orden>, private var listener: OnCartListener) : RecyclerView.Adapter<ProductCartAdapter.ViewHolder>() {
 
 
     val share = SharePrf(context)
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = FragmentItemProductoBinding.bind(view)
-        fun setListener(product: DataSource) {
+        fun setListener(product: Orden) {
             binding.bntMas.setOnClickListener {
             }
             binding.bntMENOS.setOnClickListener {
@@ -51,9 +50,9 @@ class ProductCartAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = producList[position]
         holder.setListener(product)
-        holder.binding.Textview1Cantidad.text = product.precios.toString()
+        holder.binding.Textview1Cantidad.text = product.precio1.toString()
         holder.binding.Textview2PRECIO.text = product.nombre
-        holder.binding.preciotexto.text = product.precio.toString()
+        holder.binding.preciotexto.text = product.precios2.toString()
         Glide.with(context).load(product.imagen).centerCrop().into(holder.binding.imagenPro)
         holder.binding.bntMas.setOnClickListener {
             add(product, holder)
@@ -68,14 +67,14 @@ class ProductCartAdapter(
 
     override fun getItemCount(): Int = producList.size
 
-    fun add(product: DataSource, holder: ViewHolder) {
+    fun add(product: Orden, holder: ViewHolder) {
         val id = getIndexOf(holder.binding.Textview2PRECIO.text.toString())
-        product.precios = product.precios + 1
-        producList[id].precios = product.precios
+        product.precios2 = product.precios2
+        producList[id].precios2 = product.precios2
         producList[id].precioProduc = product.precioProduc
-        holder.binding.Textview1Cantidad.text = "${product.precios}"
-        holder.binding.preciotexto.text = "${product.precios * product.precioProduc.toInt()}"
-        producList[id].precio=holder.binding.preciotexto.text.toString().toInt()
+        holder.binding.Textview1Cantidad.text = "${product.precios2}"
+        holder.binding.preciotexto.text = "${product.precios2 * product.precioProduc.toInt()}"
+        producList[id].precio1=holder.binding.preciotexto.text.toString().toInt()
         listener.showTotal(getTotal())
         share.save("orden", producList)
 
@@ -84,7 +83,7 @@ class ProductCartAdapter(
     fun getTotal(): Int {
         var total = 0
         for (s in producList) {
-            total += (s.precioProduc * s.precios)
+            total += (s.precio1.toInt() * s.precioProduc)
         }
         return total
     }
@@ -102,15 +101,15 @@ class ProductCartAdapter(
     }
 
 
-    fun delete(product: DataSource, holder: ViewHolder) {
-        if (product.precios > 1) {
+    fun delete(product: Orden, holder: ViewHolder) {
+        if (product.precio1 > 1) {
             val id = getIndexOf(holder.binding.Textview2PRECIO.text.toString())
-            product.precios = product.precios -1
-            producList[id].precios = product.precios
-            holder.binding.Textview1Cantidad.text = "${product.precios}"
-            val datos= product.precios * product.precioProduc.toInt()
+            product.precios2 = product.precios2 -1
+            producList[id].precios2 = product.precios2
+            holder.binding.Textview1Cantidad.text = "${product.precio1}"
+            val datos= product.precio1 * product.precioProduc.toInt()
             holder.binding.preciotexto.text = "$datos"
-            producList[id].precio=holder.binding.preciotexto.text.toString().toInt()
+            producList[id].precio1=holder.binding.preciotexto.text.toString().toInt()
             listener.showTotal(getTotal())
             share.save("orden", producList)
         }

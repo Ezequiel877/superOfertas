@@ -32,24 +32,7 @@
         android:name="com.example.kampasmobil2.UI.Home.Blank4"
         android:label="Blank4" >
         <argument
-            android:name="imagen"
-            app:argType="string" />
-        <argument
-            android:name="precios"
-            app:argType="string" />
-        <argument
-            android:name="ImagenD"
-            app:argType="string" />
-        <argument android:name="Cofertas"
-            app:argType="string" />
-        <argument
-            android:name="detalles"
-            app:argType="string" />
-        <argument
             android:name="id"
-            app:argType="string" />
-        <argument
-            android:name="ubicacion"
             app:argType="string" />
         <action
             android:id="@+id/action_blank4_to_fragmentDetalleProducto"
@@ -57,6 +40,9 @@
         <action
             android:id="@+id/action_blank4_to_cardFragmentDialog"
             app:destination="@id/cardFragmentDialog" />
+        <action
+            android:id="@+id/action_blank4_to_fragmentOrden"
+            app:destination="@id/fragmentOrden" />
     </fragment>
     <fragment
         android:id="@+id/blankLogin"
@@ -96,19 +82,7 @@
             android:id="@+id/action_fragmentDetalleProducto_to_blank4"
             app:destination="@id/blank4" />
         <argument
-            android:name="precios"
-            app:argType="string" />
-        <argument
-            android:name="ImagenD"
-            app:argType="string" />
-        <argument
-            android:name="imagen"
-            app:argType="string" />
-        <argument
-            android:name="Cofertas"
-            app:argType="string" />
-        <argument
-            android:name="detalles"
+            android:name="descripcion"
             app:argType="string" />
         <argument
             android:name="nombre"
@@ -138,23 +112,20 @@
         android:label="fragment_delicery"
         tools:layout="@layout/fragment_delivery" >
         <action
-            android:id="@+id/action_fragmentDelicery_to_fragmentDireccion"
-            app:destination="@id/fragmentDireccion" />
-        <action
             android:id="@+id/action_fragmentDelicery_to_fragment_Carrrito"
             app:destination="@id/fragment_Carrrito" />
         <argument
             android:name="idcommers"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentDelicery_to_fragmentDireccion"
+            app:destination="@id/fragmentDireccion" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDireccion"
         android:name="com.example.kampasmobil2.UI.Home.FragmentDireccion"
         android:label="fragment_direccion"
         tools:layout="@layout/fragment_direccion" >
-        <action
-            android:id="@+id/action_fragmentDireccion_to_mapCliente"
-            app:destination="@id/mapCliente" />
         <argument
             android:name="direccion"
             app:argType="string" />
@@ -167,21 +138,22 @@
         <action
             android:id="@+id/action_fragmentDireccion_to_blank1"
             app:destination="@id/blank1" />
-    </fragment>
-    <fragment
-        android:id="@+id/mapCliente"
-        android:name="com.example.kampasmobil2.UI.Carrrito.Orden.MapCliente"
-        android:label="fragment_map_cliente"
-        tools:layout="@layout/fragment_map_cliente" >
         <action
-            android:id="@+id/action_mapCliente_to_fragmentDireccion"
-            app:destination="@id/fragmentDireccion" />
+            android:id="@+id/action_fragmentDireccion_to_mapsDisign"
+            app:destination="@id/mapsDisign" />
     </fragment>
     <fragment
         android:id="@+id/fragmentPagos"
         android:name="com.example.kampasmobil2.UI.Carrrito.FragmentPagos"
         android:label="fragment_pagos"
-        tools:layout="@layout/fragment_pagos" />
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_fragmentPagos_to_fragmentCuotaspago"
+            app:destination="@id/fragmentCuotaspago" />
+        <argument
+            android:name="totalapagar"
+            app:argType="string" />
+    </fragment>
     <dialog
         android:id="@+id/cardFragmentDialog"
         android:name="com.example.kampasmobil2.Card.CardFragmentDialog"
@@ -196,4 +168,44 @@
             android:id="@+id/action_cardFragmentDialog_to_fragmentDelicery3"
             app:destination="@id/fragmentDelicery" />
     </dialog>
+    <fragment
+        android:id="@+id/mapsDisign"
+        android:name="com.example.kampasmobil2.UI.Carrrito.Orden.MapsDisign"
+        android:label="fragment_maps_disign"
+        tools:layout="@layout/fragment_maps_disign" >
+        <action
+            android:id="@+id/action_mapsDisign_to_fragmentDireccion"
+            app:destination="@id/fragmentDireccion" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOrden"
+        android:name="com.example.kampasmobil2.UI.Carrrito.Orden.FragmentOrden"
+        android:label="fragment_orden"
+        tools:layout="@layout/fragment_orden" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentOrden_to_fragmentSeguimiento"
+            app:destination="@id/fragmentSeguimiento" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSeguimiento"
+        android:name="com.example.kampasmobil2.UI.Carrrito.Orden.FragmentSeguimiento"
+        android:label="FragmentSeguimiento" />
+    <fragment
+        android:id="@+id/fragmentCuotaspago"
+        android:name="com.example.kampasmobil2.Card.FragmentCuotaspago"
+        android:label="fragment_cuotaspago"
+        tools:layout="@layout/fragment_cuotaspago" >
+        <argument
+            android:name="last_number"
+            app:argType="string" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <argument
+            android:name="totalapagar"
+            app:argType="string" />
+    </fragment>
 </navigation>

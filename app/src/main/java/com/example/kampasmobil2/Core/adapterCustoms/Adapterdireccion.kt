@@ -2,24 +2,13 @@ package com.example.kampasmobil2.Core.adapterCustoms
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.kampasmobil2.Core.BaseViewDireccion
-import com.example.kampasmobil2.Core.BaseViewHolder2
-import com.example.kampasmobil2.Core.Utils.SharePrf
 import com.example.kampasmobil2.Data.Home.Home.iu.OnCartListener
-import com.example.kampasmobil2.DataSource.DataSource
 import com.example.kampasmobil2.DataSource.direccion
-import com.example.kampasmobil2.R
-import com.example.kampasmobil2.UI.Carrrito.Orden.FragmentDelicery
-import com.example.kampasmobil2.UI.Home.Blank1
 import com.example.kampasmobil2.databinding.ImagendetalleBinding
-import com.google.gson.Gson
 
 class Adapterdireccion(private val listaClientes: List<direccion>, val itemCLick: OnCartListener) :
     RecyclerView.Adapter<BaseViewDireccion<*>>() {

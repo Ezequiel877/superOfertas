@@ -6,21 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.kampasmobil2.Core.BaseViewHolder2
-import com.example.kampasmobil2.DataSource.DataSource
+import com.example.kampasmobil2.Core.ComercioHolder
+import com.example.kampasmobil2.DataSource.Comercios
 import com.example.kampasmobil2.UI.Home.Blank1
 import com.example.kampasmobil2.databinding.ImagendetalleBinding
 
-class adapter1Postprivate(private val listaClientes: List<DataSource>, val itemCLick: Blank1) :
-    RecyclerView.Adapter<BaseViewHolder2<*>>() {
+class adapter1Postprivate(private val listaClientes: List<Comercios>, val itemCLick: Blank1) :
+    RecyclerView.Adapter<ComercioHolder<*>>() {
 
 
     interface OnModelClick {
-        fun onmodelClick(model: DataSource)
+        fun onmodelClick(model: Comercios)
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder2<*> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComercioHolder<*> {
         val itemBanding =
             ImagendetalleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val TAKE = HomeScreemHolde(itemBanding, parent.context)
@@ -37,7 +37,7 @@ class adapter1Postprivate(private val listaClientes: List<DataSource>, val itemC
     }
 
 
-    override fun onBindViewHolder(holder: BaseViewHolder2<*>, position: Int) {
+    override fun onBindViewHolder(holder: ComercioHolder<*>, position: Int) {
         when (holder) {
             is HomeScreemHolde -> holder.binda(listaClientes[position])
         }
@@ -46,14 +46,12 @@ class adapter1Postprivate(private val listaClientes: List<DataSource>, val itemC
     override fun getItemCount(): Int = listaClientes.size
 
     inner class HomeScreemHolde(val itemPost: ImagendetalleBinding, val context: Context) :
-        BaseViewHolder2<DataSource>(itemPost.root) {
-        override fun binda(item: DataSource) {
+        ComercioHolder<Comercios>(itemPost.root) {
+        override fun binda(item: Comercios) {
 
-            Glide.with(context).load(item.imagen).centerCrop().into(itemPost.imagenconfirme)
-            itemPost.texName.text = item.nombre
-            itemPost.tex2.text = item.precios.toString()
-            itemPost.textView.text = item.Cofertas
-            itemPost.textView3.text = item.ubicacion
+            itemPost.texName.text = item.id
+            itemPost.tex2.text = item.direccioo
+            itemPost.textView.text = item.horarios
 
         }
     }

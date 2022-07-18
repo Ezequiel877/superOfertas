@@ -43,7 +43,6 @@ class BlankRegister : Fragment(R.layout.fragment_blank_register) {
 
     }
 
-
     private fun getSeting() {
         binding.buttonOn.setOnClickListener {
             val name = binding.InPutTextUsername.text.toString().trim()
@@ -56,7 +55,7 @@ class BlankRegister : Fragment(R.layout.fragment_blank_register) {
                 binding.Confirm.error = "no hay coincidencia"
 
             }
-            /*
+
             val prefence =
                 android.preference.PreferenceManager.getDefaultSharedPreferences(this.context)
             val token = prefence.getString(constantes.TOKEN_ID, null)
@@ -78,10 +77,6 @@ class BlankRegister : Fragment(R.layout.fragment_blank_register) {
                         Log.i("failed", token)
                     }
             }
-
-           * */
-
-            Log.d("clientes", "getSeting:$name, $passwork, $email, $confirm ")
             return@setOnClickListener
         }
     }
@@ -112,5 +107,4 @@ class BlankRegister : Fragment(R.layout.fragment_blank_register) {
             }
         })
     }
-
 }

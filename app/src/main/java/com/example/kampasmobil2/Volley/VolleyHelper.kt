@@ -17,6 +17,8 @@ class VolleyHelper(context: Context) {
     }
 
     val requestK: RequestQueue by lazy { Volley.newRequestQueue(context.applicationContext) }
+
+
     fun <T> addtoRequest(req:Request<T>){
         requestK.add(req)
     }

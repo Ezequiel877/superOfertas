@@ -41,8 +41,7 @@ class MapCliente : Fragment(R.layout.fragment_map_cliente), OnMapReadyCallback {
 
     private lateinit var binding: FragmentMapClienteBinding
     private lateinit var googleMap: GoogleMap
-    val perimsio_Id = 42
-
+    val perimsio_Id = 4
     var city = ""
     var country = ""
     var adrress = ""
@@ -62,8 +61,7 @@ class MapCliente : Fragment(R.layout.fragment_map_cliente), OnMapReadyCallback {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         fusedLocation = LocationServices.getFusedLocationProviderClient(requireContext())
-        val fragment =
-            childFragmentManager.findFragmentById(R.id.fragmentMap_Cliente) as SupportMapFragment
+        val fragment = childFragmentManager.findFragmentById(R.id.fragmentMap_Cliente) as SupportMapFragment
         fragment.onCreate(savedInstanceState)
         fragment.onResume()
         fragment.getMapAsync(this)
@@ -105,8 +103,7 @@ class MapCliente : Fragment(R.layout.fragment_map_cliente), OnMapReadyCallback {
 
     override fun onStart() {
         super.onStart()
-        val fragment =
-            childFragmentManager.findFragmentById(R.id.fragmentMap_Cliente) as SupportMapFragment
+        val fragment = childFragmentManager.findFragmentById(R.id.fragmentMap_Cliente) as SupportMapFragment
         fragment.onResume()
         fragment.getMapAsync(this)
 
@@ -114,20 +111,18 @@ class MapCliente : Fragment(R.layout.fragment_map_cliente), OnMapReadyCallback {
         lastLocation()
     }
 
-/*
-
-    override fun onPause() {
-        super.onPause()
-        fusedLocation = LocationServices.getFusedLocationProviderClient(requireContext())
-        lastLocation()
-
-    }
-    override fun onStart() {
-        super.onStart()
-        fusedLocation = LocationServices.getFusedLocationProviderClient(requireContext())
-        lastLocation()
-    }
-    */
+    /*
+        override fun onPause() {
+            super.onPause()
+            fusedLocation = LocationServices.getFusedLocationProviderClient(requireContext())
+            lastLocation()
+        }
+        override fun onStart() {
+            super.onStart()
+            fusedLocation = LocationServices.getFusedLocationProviderClient(requireContext())
+            lastLocation()
+        }
+        */
     override fun onMapReady(map: GoogleMap) {
         map.let {
             googleMap = it
@@ -161,8 +156,7 @@ class MapCliente : Fragment(R.layout.fragment_map_cliente), OnMapReadyCallback {
     }
 
     private fun backDireccion() {
-        val navegacion = MapClienteDirections.actionMapClienteToFragmentDireccion(country, adrress, city)
-        findNavController().navigate(navegacion)
+
     }
 
     private fun lastLocation() {

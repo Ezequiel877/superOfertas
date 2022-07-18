@@ -5,16 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kampasmobil2.Core.Utils.SharePrf
 import com.example.kampasmobil2.Core.adapterCustoms.ProductCartAdapter
 import com.example.kampasmobil2.Data.Home.Home.iu.OnCartListener
-import com.example.kampasmobil2.DataSource.DataSource
+import com.example.kampasmobil2.DataSource.Orden
 import com.example.kampasmobil2.DataSource.direccion
-import com.example.kampasmobil2.R
 import com.example.kampasmobil2.databinding.FragmentCarBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -27,10 +25,10 @@ class CardFragmentDialog : BottomSheetDialogFragment(), OnCartListener {
     private var bindinf: FragmentCarBinding? = null
     private lateinit var mBottonSheet: BottomSheetBehavior<*>
     private lateinit var adapter: ProductCartAdapter
-    private var productSelectect: DataSource? = null
+    private var productSelectect: Orden? = null
     var share: SharePrf? = null
     var IDCOMMER: String=""
-    var selectProducto = ArrayList<DataSource>()
+    var selectProducto = ArrayList<Orden>()
     var json = Gson()
     private val args by navArgs<CardFragmentDialogArgs>()
 
@@ -79,7 +77,7 @@ class CardFragmentDialog : BottomSheetDialogFragment(), OnCartListener {
         share = SharePrf(requireContext())
         var doblw = 0
         if (!share?.getData("orden").isNullOrBlank()) {
-            val type = object : TypeToken<ArrayList<DataSource>>() {}.type
+            val type = object : TypeToken<ArrayList<Orden>>() {}.type
             selectProducto = json.fromJson(share?.getData("orden"), type)
 
             bindinf?.let {
@@ -89,7 +87,11 @@ class CardFragmentDialog : BottomSheetDialogFragment(), OnCartListener {
                     adapter = this@CardFragmentDialog.adapter
                 }
                 for (s in selectProducto) {
-                    doblw += (s.precioProduc * s.precios)
+                    val pp=s.precio1.toString().toInt()
+                    Log.d("TAGCarritoDialog", "recycler: $s")
+                    doblw +=  s.precios2
+                    Log.d("TAGTOTALPRICE", "recycler: $doblw")
+
                 }
                 setTotal(doblw)
             }
@@ -102,7 +104,7 @@ class CardFragmentDialog : BottomSheetDialogFragment(), OnCartListener {
         bindinf = null
     }
 
-    override fun setQuanty(produc: DataSource) {
+    override fun setQuanty(produc: Orden) {
         TODO("Not yet implemented")
     }
 

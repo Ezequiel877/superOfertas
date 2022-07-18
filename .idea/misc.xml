@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/drawable/check_box.xml" value="0.2385" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/drawable/icon_orden_status.xml" value="0.1335" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/activity_main.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/app_bar_main.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/detalleshppingbag.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment__carrrito.xml" value="0.2" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_blank4.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_blank_login.xml" value="0.25" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_blank_register.xml" value="0.25" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_car.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_cuotaspago.xml" value="0.22" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_delivery.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_detalle_producto.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_dialog_add.xml" value="0.25" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_direccion.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_item_producto.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_map_cliente.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_maps_disign.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_orden.xml" value="0.25" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_pagos.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/fragment_seguimiento.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/head_main.xml" value="0.22" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/imagendetalle.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/layout/orden_pedidos_init.xml" value="0.25" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/menu/botonmenus.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/menu/menu.xml" value="0.26875" />
+        <entry key="..\:/Users/Rodriguez Yonatan/AndroidStudioProjects/KampasMobil/superOfertas/app/src/main/res/menu/orden.xml" value="0.26875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
